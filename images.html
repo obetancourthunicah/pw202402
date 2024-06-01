@@ -1,0 +1,82 @@
+<!--
+Images:
+    Mapas de Bits
+        - bmp : bitmaps
+        - jpg ->
+        - gif -> 
+        - png ->
+        - webp ->
+        --------------------------
+        gimp
+        photoshop
+        adobe ilustrator
+        corel draw suite
+
+    Vectoriales
+        svg -> scalable vector graphics
+        ------------------------------
+        inkscape
+        corel draw
+
+
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imágenes</title>
+</head>
+
+<body>
+    <h1>Imágenes en HTML</h1>
+    <img src="imgs/profile.jpg" alt="Foto de Perfil" />
+    <br/>
+    <img src="https://placehold.co/1024X640" alt="Logo de Perfil" />
+    <picture>
+        <source srcset="https://placehold.co/380X380" media="(max-width:719px)" />
+        <source srcset="https://placehold.co/780x480" media="(max-width:1023px)" />
+        <img src="https://placehold.co/1024x720" alt="Responsive Image" />
+    </picture>
+
+    <picture>
+        <source srcset="https://placehold.co/1024x720/orange/000" media="(min-width:1024px)" />
+        <source srcset="https://placehold.co/780x480/orange/000" media="(min-width:720px)" />
+        <img src="https://placehold.co/380x380/orange/000" alt="Responsive Image" />
+    </picture>
+
+    <figure>
+        <picture>
+            <source srcset="https://placehold.co/1024x720/green/000" media="(min-width:1024px)" />
+            <source srcset="https://placehold.co/780x480/green/000" media="(min-width:720px)" />
+            <img src="https://placehold.co/380x380/green/000" alt="Responsive Image" />
+        </picture>
+        <figcaption>
+            Acuario de Tela: un lugar para disfrutar en familia las
+            bellezas de la fauna marítima de las costas hondureñas
+        </figcaption>
+    </figure>
+
+    <img src="imgs/threedots.svg" alt="Archivo SVG" />
+
+    <br />
+    <svg width="300" height="300" viewBox="0 0 79.374998 79.375" version="1.1" id="svg1"
+        xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        <defs id="defs1" />
+        <g id="layer1">
+            <ellipse style="fill:#ffff00;stroke-width:0.264583" id="path1" cx="22.373339" cy="21.478407" rx="13.066031"
+                ry="12.708057" />
+            <ellipse style="fill:#ff9955;stroke-width:0.264583" id="path2" cx="40.719479" cy="60.050045" rx="14.408431"
+                ry="13.334511" />
+            <ellipse style="fill:#008000;stroke-width:0.264583" id="path3" cx="64.077248" cy="30.159262" rx="11.99211"
+                ry="12.79755" />
+        </g>
+    </svg>
+
+
+
+</body>
+
+</html>
