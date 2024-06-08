@@ -1,0 +1,116 @@
+/* CSS  Cascade Style Sheet
+
+>---| Css Externos
+    | Css Style Block
+    | Css Inline
+    |---->   html
+
+
+*/
+
+* {
+    box-sizing: border-box;
+
+}
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #000000;
+    color: #FFF;
+}
+
+header h1{
+    margin: 0rem 0.5rem;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+}
+
+header div img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0.5rem;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    margin:0px;
+    padding:0px;
+}
+header nav ul li a {
+    display: inline-block;
+    color:#FFF;
+    text-decoration: none;
+    padding:0.8rem 1rem;
+}
+
+header nav ul li a:hover {
+    background-color: #555;
+}
+
+
+
+h2 {
+    text-decoration: underline;
+}
+
+.precios {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    padding: 0;
+    border: 1px solid #000;
+    max-width: 200px;
+    min-width: 200px;
+    min-height: 300px;
+    box-shadow: 3px 3px 5px #000;
+}
+
+.card h3{
+    margin:0px;
+    background-color: darkolivegreen;
+    color: #ccc;
+    padding: 0.5rem;
+}
+
+.card p {
+    flex: 1 0 auto;
+
+    padding:0.5rem;
+    font-size: 0.8rem;
+    color:#000;
+
+}
+.card span {
+    display: block;
+    text-align: right;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.card form button {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: darkolivegreen;
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+}
