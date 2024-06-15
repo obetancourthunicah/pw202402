@@ -59,7 +59,9 @@ header nav ul li a:hover {
     background-color: #555;
 }
 
-
+.container {
+    padding: 0.5rem;
+}
 
 h2 {
     text-decoration: underline;
@@ -68,6 +70,7 @@ h2 {
 .precios {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .card {
@@ -176,4 +179,56 @@ h2 {
     border-radius: 27px;
 }
 
+footer {
+    background-color: #000;
+    color:#fff;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
+footer span {
+    text-align: center;
+    font-weight: bold;
+}
+
+footer nav ul, footer .footer-redes ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin:0px;
+    padding:0px;
+    text-align: center;
+}
+footer nav ul li a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color:#fff;
+    font-size: 0.8rem;
+}
+
+@media (min-width:760px) {
+    footer {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .footer-content {
+        flex: 1 0 100%;
+    }
+    .footer-nav , .footer-redes {
+        flex: 1 0 50%;
+    }
+}
+
+@media (min-width:1025px) {
+    .footer-content {
+        flex: 1 0 60%;
+    }
+    .footer-nav , .footer-redes {
+        flex: 1 0 20%;
+        align-self: flex-start;
+    }
+}
