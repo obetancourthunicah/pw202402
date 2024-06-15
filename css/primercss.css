@@ -224,6 +224,14 @@ footer nav ul li a {
 }
 
 @media (min-width:1025px) {
+    .container {
+        max-width: 1200px;
+        margin: 1rem auto;
+    }
+    footer, header {
+        padding-left: calc((100vw - 1200px) /2 );
+        padding-right: calc((100vw - 1200px) /2 );
+    }
     .footer-content {
         flex: 1 0 60%;
     }
