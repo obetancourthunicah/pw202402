@@ -10,8 +10,8 @@
 
 * {
     box-sizing: border-box;
-
 }
+
 body {
     margin: 0px;
     padding: 0px;
@@ -114,3 +114,66 @@ h2 {
     border: none;
     cursor: pointer;
 }
+
+.hero {
+    position:relative;
+    background-color: #999;
+    height: 85vh;
+    overflow: hidden;
+}
+
+.hero img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display:block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hero .hero-content{
+    position:absolute;
+    width: 300px;
+    top:calc(50% - 150px);
+    left:calc(50% - 150px);
+    color:#fff;
+}
+
+.hero .hero-content h2 {
+    font-size: 2.5rem;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hero .hero-content h2 {
+    display:inline-block;
+    font-size: 2.5rem;
+    text-decoration: none;
+    margin: 0;
+    margin-bottom: 1.5rem;
+    /*
+    trouble  TRBL - Top Right Bottom Left
+    */
+    /*padding: 1rem 0.5rem 2rem 3rem;*/
+    /*padding: 1rem 2rem;*/
+    /*padding: 1rem;*/
+}
+
+.hero .hero-content p {
+    line-height: 2;
+}
+
+.hero .hero-content button {
+    font-size: 1.1rem;
+    display:inline-block;
+    padding: 0.5rem 2rem;
+    background-color: dodgerblue;
+    color: #333;
+    border: 1px solid #333;
+    border-radius: 27px;
+}
+
+
