@@ -21,9 +21,14 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    flex-direction: column;
     background-color: #000000;
     color: #FFF;
+}
+@media (min-width:480px) {
+    header {
+        flex-direction: row;
+    }
 }
 
 header h1{
@@ -44,6 +49,7 @@ header div img {
 
 header nav ul {
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
     margin:0px;
     padding:0px;
