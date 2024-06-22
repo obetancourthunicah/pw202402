@@ -10,6 +10,7 @@
 
 * {
     box-sizing: border-box;
+    font-family: 'Open Sans', Arial, sans-serif;
 }
 
 body {
@@ -28,6 +29,14 @@ header {
 @media (min-width:480px) {
     header {
         flex-direction: row;
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        z-index: 1001;
+    }
+    main {
+        margin-top: 66px;
     }
 }
 
@@ -59,6 +68,7 @@ header nav ul li a {
     color:#FFF;
     text-decoration: none;
     padding:0.8rem 1rem;
+    transition: background-color 0.5s ease;
 }
 
 header nav ul li a:hover {
@@ -89,6 +99,8 @@ h2 {
     min-width: 200px;
     min-height: 300px;
     box-shadow: 3px 3px 5px #000;
+    background-color: #fff;
+    transition: transform 0.7s ease-in-out;
 }
 
 .card h3{
@@ -112,6 +124,11 @@ h2 {
     padding: 0.5rem;
     font-size: 1.1rem;
     font-weight: bold;
+}
+
+.precios .card:hover {
+    transform: scale(120%);
+    z-index:1000;
 }
 
 
@@ -249,6 +266,18 @@ footer nav ul li a {
 article {
     max-width: 1024;
     padding:1rem;
+    background-color: #0F0;
+}
+article p {
+    line-height: 1.5;
+    font-size: 1rem;
+    font-style: normal;
+    text-decoration: none;
+    text-align: justify;
+}
+article h2 {
+    color: #ff0;
+    text-shadow: 1px 1px 2px #000;
 }
 
 @media (min-width:760px) {
