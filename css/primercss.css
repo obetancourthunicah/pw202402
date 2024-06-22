@@ -114,14 +114,43 @@ h2 {
     font-weight: bold;
 }
 
+
+.p-4 {
+    padding:1rem;
+}
+.p-2 {
+    padding: 0.5rem;
+}
+
+fieldset {
+    border:none;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid #333;
+    outline: none;
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+}
+
+button {
+    border-radius: 17px;
+    background-color: #999;
+    font-weight: bold;
+    border: 1px solid #777;
+    padding: 0.5rem 0.75rem;
+}
+
 .card form button {
     display: block;
-    width: 100%;
+    width: calc(100% - 2rem);
     padding: 0.5rem;
     background-color: darkolivegreen;
     color: #FFF;
     border: none;
     cursor: pointer;
+    margin:1rem;
 }
 
 .hero {
@@ -216,6 +245,12 @@ footer nav ul li a {
     font-size: 0.8rem;
 }
 
+
+article {
+    max-width: 1024;
+    padding:1rem;
+}
+
 @media (min-width:760px) {
     footer {
         flex-direction: row;
@@ -252,6 +287,7 @@ footer nav ul li a {
     height:100%;
     width: 100%;
     object-fit: cover;
+    object-position: center center;
     padding: 0px;
     margin: 0px;
 }
