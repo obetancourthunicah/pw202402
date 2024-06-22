@@ -246,3 +246,12 @@ footer nav ul li a {
         align-self: flex-start;
     }
 }
+
+.fullimage img {
+    display: inline-block;
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+    padding: 0px;
+    margin: 0px;
+}

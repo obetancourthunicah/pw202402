@@ -10,8 +10,50 @@
     flex-wrap: wrap;
 }
 
+.grid .row.reverse {
+    flex-direction: row-reverse !important;
+}
+
+.fullcenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.align-end {
+    justify-content: flex-end;
+}
+
+.p-4 {
+    padding:1rem;
+}
+.p-2 {
+    padding: 0.5rem;
+}
+
+fieldset {
+    border:none;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid #333;
+    outline: none;
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+}
+
+button {
+    border-radius: 17px;
+    background-color: #999;
+    font-weight: bold;
+    border: 1px solid #777;
+    padding: 0.5rem 0.75rem;
+}
+
 .grid .row [class*='col-'] {
-    flex:1 0;
+    flex:0 0;
 }
 
 .grid .row .col-1 { flex-basis: calc(100% / 12);}
