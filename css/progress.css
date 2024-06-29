@@ -1,0 +1,122 @@
+.animation {
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.animation .progress-circle{
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #000;
+    background-image: conic-gradient(red, green, blue);
+    animation: gorightslanted 5s infinite;
+}
+
+@keyframes gorightslanted{
+    0% {
+        top: 80%;
+        right: 100%;
+        background-image: conic-gradient(red, green, blue);
+    }
+    20% {
+        top: 80%;
+        right: 70%;
+    }
+    22% {
+        top: 50%;
+        right: 70%;
+        background-image: conic-gradient( green, blue, red);
+        transform: rotate(45deg);
+    }
+    25% {
+        top: 80%;
+        right: 70%;
+        transform: rotate(180deg);
+    }
+    50% {
+        top: 80%;
+        right: 30%;
+        background-image: conic-gradient(blue, red, green);
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 100%;
+        right: 0%;
+        background-image: conic-gradient(red, green, blue);
+    }
+}
+
+/* ---------------------------- */
+
+.modal {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background-color: rgba(0,0,0,0.75);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal .circle-loading {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border-color: #fff;
+    border-width: 6px;
+    border-style: solid;
+    border-top-color: #d48301;
+    border-top-style: dashed;
+    /*animation: rotate360 1s ease-in-out infinite ;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal .dancing-dots {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 60%;
+    height: 60%;
+}
+
+.modal .dancing-dots .circle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #d48301;
+    animation: bounce 0.5s ease-in-out infinite;
+}
+.modal .dancing-dots .circle:nth-child(2) {
+    animation-delay: 0.33s;
+}
+.modal .dancing-dots .circle:nth-child(3) {
+    animation-delay: 0.66s;
+}
+
+
+@keyframes bounce {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-32px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+@keyframes rotate360 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
