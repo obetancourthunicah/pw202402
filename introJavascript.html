@@ -9,9 +9,14 @@
         * {
             box-sizing: border-box;
         }
+        .noError {
+            display: none;
+        }
+        
         .error{
             display: block;
             color: red;
+            font-size: 0.7rem;
         }
         label {
             display: block;
@@ -29,14 +34,12 @@
         input.error, textarea.error, select.error {
             border-bottom: 1px solid red;
         }
-        .noError {
-            display: none;
-        }
+        
     </style>
 </head>
 <body>
     <h1>Validaciones con Javascript</h1>
-    <form id="formulario" action="introJavascript.html" method="POST" novalidate>
+    <form id="formulario" action="introJavascript.html" method="get" novalidate>
         <!--
         Form with inputs error
         nombre text

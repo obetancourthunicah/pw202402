@@ -156,38 +156,79 @@ function onForm_submit(e) {
     e.stopPropagation();
     console.log("e", e);
     if (!validateForm(e.target)) {
-        alert('No se enviara el Fomulario');
         return;
     };
-    alert('Se enviara el Fomulario');
+    e.target.submit();
 }
 
+const palabraNoPermitidas = [
+    'rendirse',
+    'deprimirse',
+    'mentir',
+    'chepear',
+    'robar',
+];
+
+function getErrorName (name) {
+    return `error${name[0].toUpperCase()}${name.slice(1)}`;
+}
 function validateForm(form){
     const inputs = form.querySelectorAll(
         "input, textarea, select"
     );
-    console.log("Inputs", inputs);
+    const errorsObj = {};
     inputs.forEach((inp)=>{
-        const inpType = inp.getAttribute("type");
+        const inpType = inp.getAttribute("type") || inp.tagName;
+        const errorObjName = getErrorName(inp.name);
+        const tmpArrErrors = [];
         if(inp.hasAttribute("required")){
             const isEmptyRegex= /^\s*$/;
             if(isEmptyRegex.test(inp.value)) {
-                console.log(`Input ${inp.name}: esta vacio`);
+                tmpArrErrors.push(`Input ${inp.name}: esta vacio`);
             }
         }
         if(inpType === "email") {
             const emailRegex = /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/;
             if(!emailRegex.test(inp.value)) {
-                console.log(`Correo ${inp.value} no tiene el formato correcto`);
+                tmpArrErrors.push(`Correo ${inp.value} no tiene el formato correcto`);
             }
         }
-        console.log(
-            `input ${inp.name}: ${inp.value}`
-        );
+        if(inpType === "TEXTAREA") {
+            const cleanText = inp.value.toLowerCase();
+            const badWordsFound = palabraNoPermitidas.filter(
+                (plb) => {
+                    return cleanText.includes(plb);
+                }
+            );
+            if (badWordsFound.length) {
+                tmpArrErrors.push(`Descripcion tiene lo siguiente no permitido: ${badWordsFound.join(', ')}`);
+            }
+        }
+        if(tmpArrErrors.length) {
+                errorsObj[errorObjName] = {
+                    errors: tmpArrErrors,
+                    input: inp
+                }
+        }
     });
+    if ( !Object.keys(errorsObj).length ){
+        return true;
+    }
+    updateErrors(errorsObj, form);
     return false;
 }
 
+function updateErrors( errorObj, form) {
+    const erroObjs = form.querySelectorAll('[id*=error]');
+    erroObjs.forEach(o=>{
+        o.classList.remove('error');
+        if(errorObj[o.id]){
+            o.classList.add('error');
+            o.innerHTML = errorObj[o.id].errors.join('<br/>');
+        }
+    });
+
+}
 document.addEventListener(
     "DOMContentLoaded",
     page_onload
