@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 .animation .progress-circle{
     position: absolute;
@@ -119,4 +120,8 @@
     100% {
         transform: rotate(360deg);
     }
+}
+
+.modal.hidden {
+    display: none;
 }

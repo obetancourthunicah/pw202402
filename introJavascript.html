@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro a Javascript</title>
+    <script src="js/primerjs.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .error{
+            display: block;
+            color: red;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input, textarea, select{
+            margin-bottom: 10px;
+            padding: 0.5rem 0.75rem;
+            font-size: 1rem;
+            border: none;
+            border-bottom: 1px solid #333;
+            width:100%;
+            max-width: 380px;
+        }
+        input.error, textarea.error, select.error {
+            border-bottom: 1px solid red;
+        }
+        .noError {
+            display: hide;
+        }
+    </style>
+</head>
+<body>
+    <h1>Validaciones con Javascript</h1>
+    <form id="frmA" action="introJavascript.html" method="POST" novalidate>
+        <!--
+        Form with inputs error
+        nombre text
+        correo email
+        descripcion textarea
+        departamento select con NS
+
+        -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <div class="noError" id="errorNombre">Error en el nombre</div>
+        <br>
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" required>
+        <div class="noError" id="errorCorreo">Error en el correo</div>
+        <br>
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" required></textarea>
+        <div class="noError" id="errorDescripcion">Error en la descripción</div>
+        <br>
+        <label for="departamento">Departamento:</label>
+        <select id="departamento" name="departamento" required>
+            <option value="">Seleccione un departamento</option>
+            <option value="1">Sistemas</option>
+            <option value="2">Ventas</option>
+            <option value="3">Recursos Humanos</option>
+        </select>
+        <div class="noError" id="errorDepartamento">Error en el departamento</div>
+        <br>
+        <button type="submit" id="btnEnviar" >Enviar</button>
+    </form>
+</body>
+</html>
