@@ -143,3 +143,54 @@ fetch('https://pokeapi.co/api/v2/pokemon/')
     .catch((error)=>{
         console.log(error);
 });
+
+/*------Manipulación DOM--------------*/
+
+function page_onload(){
+    const formulario = document.getElementById("formulario");
+    formulario.addEventListener("submit", onForm_submit);
+}
+
+function onForm_submit(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("e", e);
+    if (!validateForm(e.target)) {
+        alert('No se enviara el Fomulario');
+        return;
+    };
+    alert('Se enviara el Fomulario');
+}
+
+function validateForm(form){
+    const inputs = form.querySelectorAll(
+        "input, textarea, select"
+    );
+    console.log("Inputs", inputs);
+    inputs.forEach((inp)=>{
+        const inpType = inp.getAttribute("type");
+        if(inp.hasAttribute("required")){
+            const isEmptyRegex= /^\s*$/;
+            if(isEmptyRegex.test(inp.value)) {
+                console.log(`Input ${inp.name}: esta vacio`);
+            }
+        }
+        if(inpType === "email") {
+            const emailRegex = /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/;
+            if(!emailRegex.test(inp.value)) {
+                console.log(`Correo ${inp.value} no tiene el formato correcto`);
+            }
+        }
+        console.log(
+            `input ${inp.name}: ${inp.value}`
+        );
+    });
+    return false;
+}
+
+document.addEventListener(
+    "DOMContentLoaded",
+    page_onload
+);
+
+
