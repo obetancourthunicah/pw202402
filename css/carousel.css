@@ -14,3 +14,51 @@
     height: 85vh;
     transition: transform 1s ease-in-out;
 }
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: #FFF;
+    text-shadow: 1px 1px 1px #000;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 80px;
+    font-size: 3rem;
+    z-index: 1000;
+}
+.carousel-arrow-left {
+    left: 0;
+}
+.carousel-arrow-right {
+    right: 0;
+}
+
+.carousel-navigator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+.carousel-navigator-dot{
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #FFF;
+    padding: 0.3rem;
+    margin: 0.25rem;
+    cursor: pointer;
+}
+
+.carousel-navigator-dot.active {
+    background-color: #F00;
+}
