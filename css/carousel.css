@@ -2,7 +2,7 @@
     position: relative;
     height: 85vh;
     width:100vw;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .carousel-track {
@@ -12,5 +12,5 @@
     top:0;
     left:0;
     height: 85vh;
-    transition: left 0.8s ease-in-out;
+    transition: transform 1s ease-in-out;
 }
