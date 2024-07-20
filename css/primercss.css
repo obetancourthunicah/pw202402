@@ -175,6 +175,7 @@ button {
     background-color: #999;
     height: 85vh;
     overflow: hidden;
+    width:100vw;
 }
 
 .hero img{

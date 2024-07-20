@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="css/primercss.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/progress.css">
+    <link rel="stylesheet" href="css/carousel.css">
     <script>
-        document.addEventListener('DOMContentLoaded' , ()=>{
-            setTimeout(()=>{
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
                 const modalNode = document.querySelector(".modal");
                 modalNode.classList.add("hidden");
             }, 2000);
@@ -36,23 +37,61 @@
         </nav>
     </header>
     <main>
-        <section class="hero">
-            <picture>
-                <source srcset="https://picsum.photos/id/237/1024/400" media="(min-width: 1025px)">
-                <source srcset="https://picsum.photos/id/237/400/300" media="(min-width: 380px)">
-                <img src="https://picsum.photos/id/237/300/300" alt="Hero">
-            </picture>
-            <span class="hero-content">
-                <h2>Portafolio</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, aperiam rerum quis laudantium at
-                    quaerat.</p>
-                <form action="portafolioGalery.html" method="get">
-                    <button>Ver mas</button>
-                </form>
-            </span>
+        <section class="carousel">
+            <section class="carousel-track">
+                <section class="hero">
+                    <picture>
+                        <source srcset="https://picsum.photos/id/237/1024/400" media="(min-width: 1025px)">
+                        <source srcset="https://picsum.photos/id/237/400/300" media="(min-width: 380px)">
+                        <img src="https://picsum.photos/id/237/300/300" alt="Hero">
+                    </picture>
+                    <span class="hero-content">
+                        <h2>Portafolio</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, aperiam rerum quis laudantium
+                            at
+                            quaerat.</p>
+                        <form action="portafolioGalery.html" method="get">
+                            <button>Ver mas</button>
+                        </form>
+                    </span>
+                </section>
+                <section class="hero">
+                    <picture>
+                        <source srcset="https://picsum.photos/id/37/1024/400" media="(min-width: 1025px)">
+                        <source srcset="https://picsum.photos/id/37/400/300" media="(min-width: 380px)">
+                        <img src="https://picsum.photos/id/37/300/300" alt="Hero">
+                    </picture>
+                    <span class="hero-content">
+                        <h2>Hoja de Vida</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, aperiam rerum quis laudantium
+                            at
+                            quaerat.</p>
+                        <form action="portafolioGalery.html" method="get">
+                            <button>Ver mas</button>
+                        </form>
+                    </span>
+                </section>
+                <section class="hero">
+                    <picture>
+                        <source srcset="https://picsum.photos/id/137/1024/400" media="(min-width: 1025px)">
+                        <source srcset="https://picsum.photos/id/137/400/300" media="(min-width: 380px)">
+                        <img src="https://picsum.photos/id/137/300/300" alt="Hero">
+                    </picture>
+                    <span class="hero-content">
+                        <h2>Proyectos</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, aperiam rerum quis laudantium
+                            at
+                            quaerat.</p>
+                        <form action="portafolioGalery.html" method="get">
+                            <button>Ver mas</button>
+                        </form>
+                    </span>
+                </section>
+            </section>
+        </section>
         </section>
         <section class="grid">
-            <div class="row" >
+            <div class="row">
                 <div class="col-12 col-m-6 fullimage">
                     <picture>
                         <source srcset="https://picsum.photos/id/250/1024/400" media="(min-width: 1025px)">
@@ -63,7 +102,9 @@
                 <div class="col-12 col-m-6 fullcenter p-4">
                     <div class="fullcenter">
                         <h2>Algo Impresionante</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit excepturi earum, eveniet accusamus dolorem provident, labore ullam, consequatur in veniam adipisci rem quidem vitae! Repellat totam voluptates recusandae incidunt omnis!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit excepturi earum, eveniet
+                            accusamus dolorem provident, labore ullam, consequatur in veniam adipisci rem quidem vitae!
+                            Repellat totam voluptates recusandae incidunt omnis!</p>
                     </div>
                 </div>
             </div>
@@ -80,11 +121,11 @@
                         <h2 class="col-12">Crea tu Cuenta</h2>
                         <fieldset class="row">
                             <label class="col-12 col-m-4">Correo</label>
-                            <input class="col-12 col-m-8"type="email" />
+                            <input class="col-12 col-m-8" type="email" />
                         </fieldset>
                         <fieldset class="row">
                             <label class="col-12 col-m-4">Contraseña</label>
-                            <input class="col-12 col-m-8"type="password" />
+                            <input class="col-12 col-m-8" type="password" />
                         </fieldset>
                         <fieldset class="row align-end">
                             <div class="col-5 col-m-8 fullcenter">
@@ -128,16 +169,31 @@
         </section>
         <article class="container">
             <h2>Apples AI</h2>
-            <p>Apple’s nearly two-hour-long Worldwide Developer Conference kick-off event was chock full of announcements.
-                By far the biggest news was Apple’s introduction of its own artificial intelligence model, Apple Intelligence. Apple Intelligence will be able to draw from users’ personal information on their devices to answer their questions, all in a privacy-conscious way.
-                Here are some of the highlights from today’s event, which also included operating system upgrades for the company’s various products, including iPhones, iPads, Macs and more.</p>
-            <p>Siri gets smarter. With Apple Intelligence, Siri will be able to answer questions using information from across multiple apps. For example, it could prep you for an upcoming meeting by telling you the time and location from your calendar, summarizing the prep document your colleague sent in an email and telling you the weather so you know how to dress. 
-                AI-generated emojis. Apple Intelligence will make it possible for users to create their own emojis with text prompt in iMessage, as well as to generate non-photorealistic images to send in conversations.
-                OpenAI Partnership. In situations where OpenAI’s technology is better suited to answer a users’ question, Apple will let them opt-in to searching ChatGPT instead. The integration will work directly from their Apple device, even if a user doesn’t have a ChatGPT account.
-                Hidden apps. New privacy updates for iPhone will let users “lock” certain apps so only they can open them using Face ID, Touch ID or their passcode. Users can also “hide” apps so they don’t show up on their home screen and no media from those apps appear elsewhere across their system.</p>
-            <p>Real-time call transcripts. iPhone users will now be able to record and create transcripts of calls right from the phone app. All parties to the call will be notified when it is being recorded.</p>
-            <p>Gesture controls for AirPods. With new gesture controls, AirPods users will be able to answer or decline a call with just a nod or shake of their head.</p>
-            <p>Apple watch health monitoring. New vital sign tracking on Apple Watch can notify users when they may be getting sick, based on signals like body temperature and heart rate.</p>
+            <p>Apple’s nearly two-hour-long Worldwide Developer Conference kick-off event was chock full of
+                announcements.
+                By far the biggest news was Apple’s introduction of its own artificial intelligence model, Apple
+                Intelligence. Apple Intelligence will be able to draw from users’ personal information on their devices
+                to answer their questions, all in a privacy-conscious way.
+                Here are some of the highlights from today’s event, which also included operating system upgrades for
+                the company’s various products, including iPhones, iPads, Macs and more.</p>
+            <p>Siri gets smarter. With Apple Intelligence, Siri will be able to answer questions using information from
+                across multiple apps. For example, it could prep you for an upcoming meeting by telling you the time and
+                location from your calendar, summarizing the prep document your colleague sent in an email and telling
+                you the weather so you know how to dress.
+                AI-generated emojis. Apple Intelligence will make it possible for users to create their own emojis with
+                text prompt in iMessage, as well as to generate non-photorealistic images to send in conversations.
+                OpenAI Partnership. In situations where OpenAI’s technology is better suited to answer a users’
+                question, Apple will let them opt-in to searching ChatGPT instead. The integration will work directly
+                from their Apple device, even if a user doesn’t have a ChatGPT account.
+                Hidden apps. New privacy updates for iPhone will let users “lock” certain apps so only they can open
+                them using Face ID, Touch ID or their passcode. Users can also “hide” apps so they don’t show up on
+                their home screen and no media from those apps appear elsewhere across their system.</p>
+            <p>Real-time call transcripts. iPhone users will now be able to record and create transcripts of calls right
+                from the phone app. All parties to the call will be notified when it is being recorded.</p>
+            <p>Gesture controls for AirPods. With new gesture controls, AirPods users will be able to answer or decline
+                a call with just a nod or shake of their head.</p>
+            <p>Apple watch health monitoring. New vital sign tracking on Apple Watch can notify users when they may be
+                getting sick, based on signals like body temperature and heart rate.</p>
         </article>
         <section class="animation">
             <div class="progress-circle"></div>
