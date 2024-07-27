@@ -9,25 +9,24 @@ function PlanDeEstudio(){
             element.addEventListener('mouseenter',(e)=>{
                 currentClass = e.target;
                 classSelected(currentClass);
-                //console.log("Mouse Enter:", e.target);
             });
             element.addEventListener('mouseleave',(e)=>{
+                cleanSelectedNode(currentClass);
                 currentClass = null;
-                //console.log("Mouse Leave:", e.target);
             });
         });
     }
 
     function classSelected(nodo) {
-        const requisitos = (nodo.dataset?.req || "").split('|');
-        const apertura = (nodo.dataset?.opens || "").split('|');
+        const requisitos = (nodo.dataset?.req || "").split('|').filter((req) => req !== '');
+        const apertura = (nodo.dataset?.opens || "").split('|').filter((req) => req !== '');
 
         requisitosNodes = requisitos.map((req) => {
             return document.querySelector(`#${req}`);
-        });
+        }).filter(node=>node!==null);
         aperturaNodes = apertura.map((req) => {
             return document.querySelector(`#${req}`);
-        });
+        }).filter(node=>node!==null);
 
         [...requisitosNodes].forEach((element) => {
             element.classList.add('requisito');
@@ -39,6 +38,17 @@ function PlanDeEstudio(){
 
         currentClass.classList.add('selected');
 
+    }
+    function cleanSelectedNode(node){
+        [...requisitosNodes||[]].forEach((element) => {
+            element.classList.remove('requisito');
+        });
+
+        [...aperturaNodes||[]].forEach((element) => {
+            element.classList.remove('apertura');
+        });
+
+        currentClass.classList.remove('selected');
     }
     Init();
 }

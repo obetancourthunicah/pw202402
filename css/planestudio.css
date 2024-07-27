@@ -38,3 +38,15 @@
     border: 1px solid #555;
     font-size: 0.75rem;
 }
+
+.class.requisito {
+    box-shadow: 3px 3px 5px #0008e2;
+}
+
+.class.apertura {
+    box-shadow: 3px 3px 5px #00e208;
+}
+
+.class.selected {
+    background-color: #b45700;
+}
