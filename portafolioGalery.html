@@ -25,6 +25,12 @@
 
 <body>
     <header>
+        <input type="checkbox" id="check">
+        <label class="hamburger" for="check">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </label>
         <div>
             <img src="https://placehold.co/64X64" alt="Logo" />
             <h1>Curso de Portales Web I</h1>
@@ -33,7 +39,19 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">CSS</a></li>
-                <li><a href="#">Javascript</a></li>
+                <li class="hasSubmenu">
+                    <input type="checkbox" id="submenu1">
+                    <label for="submenu1">Javascript</label>
+                    <ul>
+                        <li>
+                            <a href="#">Javascript 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Javascript 2</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Cool</a></li>
             </ul>
         </nav>
     </header>

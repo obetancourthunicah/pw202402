@@ -20,32 +20,48 @@ body {
 
 header {
     display: flex;
+    position:relative;
     align-items: center;
     justify-content: space-between;
-    flex-direction: column;
     background-color: #000000;
     color: #FFF;
+    z-index: 1000;
 }
-@media (min-width:480px) {
-    header {
-        flex-direction: row;
-        position:fixed;
-        top:0;
-        left:0;
-        width:100%;
-        z-index: 1001;
-    }
-    main {
-        margin-top: 66px;
-    }
+header input[type="checkbox"] {
+    display: none;
+}
+
+
+header>label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
+header label .line {
+    width: 100%;
+    height: 3px;
+    margin:2px;
+    background-color: #FFF;
+    transition: all 0.5s ease;
+}
+
+header #check:checked~nav {
+    height:max-content;
 }
 
 header h1{
     margin: 0rem 0.5rem;
+    font-size: 1.1rem;
 }
 
 header div {
     display: flex;
+    flex: 1;
     align-items: center;
 }
 
@@ -55,25 +71,97 @@ header div img {
     border-radius: 50%;
     margin: 0.5rem;
 }
-
+header nav {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    top: 100%;
+    width:100%;
+    height:0px;
+    background-color: #000;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
 header nav ul {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     list-style: none;
+    width:100%;
     margin:0px;
     padding:0px;
+    background-color: #000;
 }
-header nav ul li a {
+header nav ul li a, header nav ul li label {
     display: inline-block;
     color:#FFF;
     text-decoration: none;
     padding:0.8rem 1rem;
+    width:100%;
     transition: background-color 0.5s ease;
+    cursor: pointer;
+}
+header nav ul li.hasSubmenu ul {
+    height: 0px;
+    overflow: hidden;
+    padding-left:1rem;
 }
 
-header nav ul li a:hover {
+header nav ul li a:hover, header nav ul li label:hover {
     background-color: #555;
 }
+
+header nav ul li input[type="checkbox"]:checked~ul {
+    height:max-content;
+}
+
+@media (min-width:480px) {
+    header {
+        flex-direction: row;
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        z-index: 1001;
+    }
+    header>label{
+        display:none;
+    }
+    header nav {
+        position: relative;
+        top: 0;
+        height: auto;
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+        overflow: visible;
+    }
+    header nav>ul {
+        flex-direction: row;
+        margin:0px;
+        padding:0px;
+    }
+    header nav ul li.hasSubmenu {
+        position: relative;
+    }
+    header nav ul li.hasSubmenu ul{
+        position: absolute;
+        top:100%;
+        left: 1rem;
+        z-index: 1015;
+        background-color: #000;
+        padding-left: 0;
+        width:max-content;
+    }
+    main {
+        margin-top: 66px;
+    }
+}
+
 
 .container {
     padding: 0.5rem;
