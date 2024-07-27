@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/progress.css">
     <link rel="stylesheet" href="css/carousel.css">
+    <link rel="stylesheet" href="css/planestudio.css">
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
@@ -21,6 +22,7 @@
         });
     </script>
     <script src="js/carousel.js"></script>
+    <script src="js/planestudio.js"></script>
 </head>
 
 <body>
@@ -232,6 +234,93 @@
         </article>
         <section class="animation">
             <div class="progress-circle"></div>
+        </section>
+        <section class="planEstudio">
+            <h2>Plan de Estudio</h2>
+            <section class="bloque" id="b1">
+                <div class="bloque-titulo">
+                    <h3>Bloque 1</h3>
+                </div>
+                <div class="clases">
+                    <div class="class crs" id="MT101"
+                        data-req=""
+                        data-opens="MT201|FS101|MT301"
+                    >
+                        <span>MT101</span>
+                        <p>Matemáticas</p>
+                    </div>
+                    <div class="class crs" id="ES101"
+                        data-req=""
+                        data-opens="ES201"
+                    >
+                        <span>ES101</span>
+                        <p>Español</p>
+                    </div>
+                    <div class="class crs" id="FI101"
+                        data-req=""
+                        data-opens="CR201"
+                    >
+                        <span>FI101</span>
+                        <p>Filosifía</p>
+                    </div>
+                    <div class="class crs" id="IF101"
+                        data-req=""
+                        data-opens="IF102|ING03"
+                    >
+                        <span>IF101</span>
+                        <p>Informática 1</p>
+                    </div>
+                    <div class="class crs" id="SC101"
+                        data-req=""
+                        data-opens="SC201"
+                    >
+                        <span>SC101</span>
+                        <p>Sociología</p>
+                    </div>
+                </div>
+            </section>
+            <section class="bloque" id="b2">
+                <div class="bloque-titulo">
+                    <h3>Bloque 2</h3>
+                </div>
+                <div class="clases">
+                    <div class="class crs" id="MT201"
+                        data-req="MT101"
+                        data-opens="MT103"
+                    >
+                        <span>MT201</span>
+                        <p>Precálculo</p>
+                    </div>
+                    <div class="class crs" id="ES201"
+                        data-req="ES101"
+                        data-opens=""
+                    >
+                        <span>ES201</span>
+                        <p>Expresión Oral y Escrita</p>
+                    </div>
+                    <div class="class crs" id="CR201"
+                        data-req="FI101"
+                        data-opens=""
+                    >
+                        <span>CR201</span>
+                        <p>El hombre frente a la Vida</p>
+                    </div>
+                    <div class="class crs" id="IF102"
+                        data-req="IF101"
+                        data-opens="SW101"
+                    >
+                        <span>IF102</span>
+                        <p>Informática 2</p>
+                    </div>
+                    <div class="class crs" id="SC201"
+                        data-req="SC101"
+                        data-opens=""
+                    >
+                        <span>SC201</span>
+                        <p>Historia de Honduras</p>
+                    </div>
+                </div>
+            </section>
         </section>
     </main>
     <footer>
